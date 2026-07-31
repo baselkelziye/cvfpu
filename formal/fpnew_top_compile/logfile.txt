@@ -1,0 +1,2 @@
+SBY 22:35:35 [fpnew_top_compile] Removing directory '/home/bkelziye/Desktop/cvfpu/formal/fpnew_top_compile'.
+SBY 22:35:35 [fpnew_top_compile] Copy '/home/bkelziye/Desktop/cvfpu/formal/../vendor/common_cells/include/common_cells/registers.svh' to '/home/bkelziye/Desktop/cvfpu/formal/fpnew_top_compile/src/registers.svh'.
