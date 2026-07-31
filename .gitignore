@@ -1,3 +1,8 @@
 *~
 html
 Bender.lock
+formal/noncomp
+formal/noncomp_bmc
+formal/noncomp_cvr
+formal/noncomp_prf
+formal/noncomp_waves.gtkw

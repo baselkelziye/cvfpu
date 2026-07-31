@@ -395,7 +395,7 @@ module fpnew_noncomp #(
     // Valid: enabled by ready signal, synchronous clear with the flush signal
     `FFLARNC(out_pipe_valid_q[i+1], out_pipe_valid_q[i], out_pipe_ready[i], flush_i, 1'b0, clk_i, rst_ni)
     // Enable register if pipleine ready and a valid data item is present
-    assign reg_ena = (out_pipe_ready[i] & out_pipe_valid_q[i]) | reg_ena_i[NUM_INP_REGS + i];
+    assign reg_ena = (out_pipe_ready[i] & out_pipe_valid_q[i]);
     // Generate the pipeline registers within the stages, use enable-registers
     `FFL(out_pipe_result_q[i+1],        out_pipe_result_q[i],        reg_ena, '0)
     `FFL(out_pipe_status_q[i+1],        out_pipe_status_q[i],        reg_ena, '0)
@@ -430,5 +430,81 @@ module fpnew_noncomp #(
   end else begin
     assign early_out_valid_o = 1'b0;
   end
+
+`ifdef FORMAL
+  reg f_past_valid;
+  initial f_past_valid = 1'b0;
+  // initial out_pipe_status_q = '0;
+  always @(posedge clk_i)
+      f_past_valid <= 1'b1;
+
+  always @(*)
+    if(!f_past_valid) begin
+      assume(!rst_ni);
+    end
+
+  // The bus starts out idle, and returns to idle after a reset
+  always @(posedge clk_i)
+    if(!f_past_valid || !rst_ni) begin
+      assume(!in_valid_i);
+      assume(out_ready_i);
+    end
+
+  // Output handshake should be idle after a reset
+  always @(posedge clk_i)
+    if(f_past_valid && !rst_ni) begin
+      assert(!out_valid_o);
+      assert(in_ready_o);
+    end
+
+
+  //An asserted valid singnals that data on the corresponding interface is valid and stable.
+  always @(posedge clk_i)
+    if(f_past_valid && rst_ni && $past(in_valid_i && !in_ready_o) && $past(!flush_i)) begin
+      assume(in_valid_i);
+      assume(operands_i == $past(operands_i));
+      assume(is_boxed_i == $past(is_boxed_i));
+      assume(rnd_mode_i == $past(rnd_mode_i));
+      assume(op_i       == $past(op_i)      );
+      assume(op_mod_i   == $past(op_mod_i)  );
+      assume(tag_i      == $past(tag_i)     );
+      assume(mask_i     == $past(mask_i)    );
+      assume(aux_i      == $past(aux_i)     );
+    end
+
+  //Backpressure test, if master is not ready to recieve result, the result should be stable
+  always @(posedge clk_i)
+    if(f_past_valid && rst_ni && $past(out_valid_o && !out_ready_i) && $past(!flush_i)) begin
+      assert(out_valid_o);
+      assert(result_o        == $past(result_o       ));
+      assert(status_o        == $past(status_o       ));
+      assert(tag_o           == $past(tag_o          ));
+      assert(extension_bit_o == $past(extension_bit_o));
+      assert(class_mask_o    == $past(class_mask_o   ));
+      assert(is_class_o      == $past(is_class_o     ));
+      assert(mask_o          == $past(mask_o         ));
+      assert(aux_o           == $past(aux_o          ));
+      assert(busy_o          == $past(busy_o         ));
+    end
+
+  //Noncomp only recieves these operations
+  //Make these as asserts from parent module
+  always @(*) begin
+    if(in_valid_i) begin
+    assume(op_i == fpnew_pkg::SGNJ || op_i == fpnew_pkg::MINMAX ||
+           op_i == fpnew_pkg::CMP  || op_i == fpnew_pkg::CLASSIFY);
+    end
+  end
+
+  always @(posedge clk_i) begin
+
+  end
+  // always @(*)
+  //   if(out_valid_o)
+  //     assert(status_o[3:0] == 4'b0000);
+    
+
+
+`endif
 
 endmodule
