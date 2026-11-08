@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-08-16T13:26:19" hostname="basel-ubuntu-HP-Notebook" package="fpnew_top" id="0" name="cvr" tests="13" errors="0" failures="0" time="33" skipped="10">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="cvr" name="build execution" time="0">
+</testcase>
+<testcase classname="cvr" name="Property COVER in fpnew_top/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi/divsqrt_handshake at handshake_checker.sv:67.18-69.3" time="0" type="COVER" location="handshake_checker.sv:67.18-69.3" id="c_out_handshake" tracefile="engine_0/trace2.vcd">
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi/divsqrt_handshake at handshake_checker.sv:64.15-64.46" time="0" type="ASSERT" location="handshake_checker.sv:64.15-64.46" id="a_out_stable">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi/divsqrt_handshake at handshake_checker.sv:51.20-51.55" time="0" type="ASSERT" location="handshake_checker.sv:51.20-51.55" id="a_reset_out_idle">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi/divsqrt_handshake at handshake_checker.sv:77.24-77.55" time="0" type="ASSERT" location="handshake_checker.sv:77.24-77.55" id="g_env_assert_handshake_checker.a_inp_stable">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[1].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi/divsqrt_handshake at handshake_checker.sv:76.24-76.59" time="0" type="ASSERT" location="handshake_checker.sv:76.24-76.59" id="g_env_assert_handshake_checker.a_reset_inp_idle">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property COVER in fpnew_top/gen_operation_groups[3].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi/cast_handshake at handshake_checker.sv:67.18-69.3" time="0" type="COVER" location="handshake_checker.sv:67.18-69.3" id="c_out_handshake" tracefile="engine_0/trace1.vcd">
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[3].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi/cast_handshake at handshake_checker.sv:64.15-64.46" time="0" type="ASSERT" location="handshake_checker.sv:64.15-64.46" id="a_out_stable">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[3].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi/cast_handshake at handshake_checker.sv:51.20-51.55" time="0" type="ASSERT" location="handshake_checker.sv:51.20-51.55" id="a_reset_out_idle">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[3].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi/cast_handshake at handshake_checker.sv:77.24-77.55" time="0" type="ASSERT" location="handshake_checker.sv:77.24-77.55" id="g_env_assert_handshake_checker.a_inp_stable">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/gen_operation_groups[3].i_opgroup_block/gen_merged_slice.i_multifmt_slice/gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi/cast_handshake at handshake_checker.sv:76.24-76.59" time="0" type="ASSERT" location="handshake_checker.sv:76.24-76.59" id="g_env_assert_handshake_checker.a_reset_inp_idle">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property COVER in fpnew_top/fpnew_top_b at handshake_checker.sv:67.18-69.3" time="0" type="COVER" location="handshake_checker.sv:67.18-69.3" id="c_out_handshake" tracefile="engine_0/trace0.vcd">
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/fpnew_top_b at handshake_checker.sv:64.15-64.46" time="0" type="ASSERT" location="handshake_checker.sv:64.15-64.46" id="a_out_stable">
+<skipped />
+</testcase>
+<testcase classname="cvr" name="Property ASSERT in fpnew_top/fpnew_top_b at handshake_checker.sv:51.20-51.55" time="0" type="ASSERT" location="handshake_checker.sv:51.20-51.55" id="a_reset_out_idle">
+<skipped />
+</testcase>
+<system-out>SBY 13:25:48 [fpnew_top_cvr] Removing directory '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_pkg.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_pkg.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_classifier.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_classifier.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_rounding.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_rounding.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_cast_multi.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_cast_multi.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_fma.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_fma.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/common_cells/src/cf_math_pkg.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/cf_math_pkg.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/common_cells/src/rr_arb_tree.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/rr_arb_tree.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/common_cells/src/lzc.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/lzc.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_fma_multi.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_fma_multi.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_noncomp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_noncomp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../vendor/openc910/C910_RTL_FACTORY/gen_rtl/clk/rtl/gated_clk_cell.v' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/gated_clk_cell.v'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_ctrl.v' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/ct_vfdsu_ctrl.v'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../vendor/openc910/C910_RTL_FACTORY/gen_rtl/vfdsu/rtl/ct_vfdsu_top.v' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/ct_vfdsu_top.v'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/defs_div_sqrt_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/control_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/control_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/div_sqrt_mvp_wrapper.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/div_sqrt_top_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/iteration_div_sqrt_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/norm_div_sqrt_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/nrbd_nrsc_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/preprocess_mvp.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_divsqrt_th_32.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_divsqrt_th_32.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_divsqrt_th_64_multi.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_divsqrt_th_64_multi.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_divsqrt_multi.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_divsqrt_multi.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_opgroup_fmt_slice.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_opgroup_fmt_slice.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_opgroup_multifmt_slice.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_opgroup_multifmt_slice.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_opgroup_block.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_opgroup_block.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/fpnew_top.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/fpnew_top.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../../src/common_cells/include/common_cells/registers.svh' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/common_cells/registers.svh'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../fv_common/handshake_checker.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/handshake_checker.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/top_bind.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/top_bind.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../fv_common/handshake_binds/divsqrt_pulp_hs_bind.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/divsqrt_pulp_hs_bind.sv'.
+SBY 13:25:48 [fpnew_top_cvr] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/top/../fv_common/handshake_binds/cast_hs_bind.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/src/cast_hs_bind.sv'.
+SBY 13:25:48 [fpnew_top_cvr] engine_0: smtbmc yices
+SBY 13:25:48 [fpnew_top_cvr] base: starting process &quot;cd fpnew_top_cvr/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 13:25:48 [fpnew_top_cvr] base: This is an ACADEMIC LICENSE of TabbyCAD Suite.
+SBY 13:25:48 [fpnew_top_cvr] base: This license is granted for the limited purpose of academic and/or research activities.
+SBY 13:25:48 [fpnew_top_cvr] base: It is forbidden to use this license to perform services for a fee or other consideration; or in the generation or verification of hardware or hardware designs for sale or license with a view to profit or for a fee or other consideration.
+SBY 13:25:48 [fpnew_top_cvr] base: This license was issued to Basel Kelziye.
+SBY 13:25:48 [fpnew_top_cvr] base: Customer PoC: Basel Kelziye &lt;basel.kelziye@estudiantat.upc.edu&gt;.
+SBY 13:25:48 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1953] rr_arb_tree.sv:53: type identifier 'output_t' is not visible from module 'rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)'; pretty-printed output will be illegal
+SBY 13:25:49 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1930] fpnew_divsqrt_multi.sv:148: select index -1 into 'reg_ena_i' is out of bounds
+SBY 13:25:49 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1930] fpnew_divsqrt_multi.sv:218: select index -1 into 'reg_ena_i' is out of bounds
+SBY 13:25:49 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1930] fpnew_divsqrt_multi.sv:310: select index -1 into 'reg_ena_i' is out of bounds
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1216] fpnew_divsqrt_multi.sv:148: index -1 is out of range [0:0] for 'reg_ena_i'
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1216] fpnew_divsqrt_multi.sv:218: index -1 is out of range [0:0] for 'reg_ena_i'
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] control_mvp.sv:828: net 'Q_sqrt3[57]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] control_mvp.sv:832: net 'Sqrt_DO[3][1]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] control_mvp.sv:840: net 'Iteration_cell_carry_D[3]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] control_mvp.sv:842: net 'Iteration_cell_sum_AMASK_D[3][57]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VERI-1216] fpnew_divsqrt_multi.sv:310: index -1 is out of range [0:0] for 'reg_ena_i'
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1013] divsqrt_pulp_hs_bind.sv:19: input port 'payload_i[0]' is not connected on this instance
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1013] cast_hs_bind.sv:19: input port 'payload_i[0]' is not connected on this instance
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] fpnew_opgroup_multifmt_slice.sv:91: net 'divsqrt_done[0]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1002] fpnew_opgroup_multifmt_slice.sv:91: net 'divsqrt_ready[0]' does not have a driver
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1013] top_bind.sv:15: input port 'payload_i[0]' is not connected on this instance
+SBY 13:25:50 [fpnew_top_cvr] base: VERIFIC-WARNING [VDB-1053] top_bind.sv:15: input port 'out_valid_o' remains unconnected for this instance
+SBY 13:25:52 [fpnew_top_cvr] base: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [28] is used but has no driver.
+SBY 13:25:52 [fpnew_top_cvr] base: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [15] is used but has no driver.
+SBY 13:25:52 [fpnew_top_cvr] base: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [12] is used but has no driver.
+SBY 13:25:52 [fpnew_top_cvr] base: Warning: Wire control_mvp_default.\Iteration_cell_carry_D [3] is used but has no driver.
+SBY 13:25:53 [fpnew_top_cvr] base: finished (returncode=0)
+SBY 13:25:53 [fpnew_top_cvr] prep: starting process &quot;cd fpnew_top_cvr/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 13:25:53 [fpnew_top_cvr] prep: This is an ACADEMIC LICENSE of TabbyCAD Suite.
+SBY 13:25:53 [fpnew_top_cvr] prep: This license is granted for the limited purpose of academic and/or research activities.
+SBY 13:25:53 [fpnew_top_cvr] prep: It is forbidden to use this license to perform services for a fee or other consideration; or in the generation or verification of hardware or hardware designs for sale or license with a view to profit or for a fee or other consideration.
+SBY 13:25:53 [fpnew_top_cvr] prep: This license was issued to Basel Kelziye.
+SBY 13:25:53 [fpnew_top_cvr] prep: Customer PoC: Basel Kelziye &lt;basel.kelziye@estudiantat.upc.edu&gt;.
+SBY 13:25:53 [fpnew_top_cvr] prep: Warning: Wire control_mvp_default.\Iteration_cell_carry_D [3] is used but has no driver.
+SBY 13:25:53 [fpnew_top_cvr] prep: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [12] is used but has no driver.
+SBY 13:25:53 [fpnew_top_cvr] prep: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [15] is used but has no driver.
+SBY 13:25:53 [fpnew_top_cvr] prep: Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [28] is used but has no driver.
+SBY 13:25:54 [fpnew_top_cvr] prep: finished (returncode=0)
+SBY 13:25:54 [fpnew_top_cvr] smt2: starting process &quot;cd fpnew_top_cvr/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 13:25:54 [fpnew_top_cvr] smt2: This is an ACADEMIC LICENSE of TabbyCAD Suite.
+SBY 13:25:54 [fpnew_top_cvr] smt2: This license is granted for the limited purpose of academic and/or research activities.
+SBY 13:25:54 [fpnew_top_cvr] smt2: It is forbidden to use this license to perform services for a fee or other consideration; or in the generation or verification of hardware or hardware designs for sale or license with a view to profit or for a fee or other consideration.
+SBY 13:25:54 [fpnew_top_cvr] smt2: This license was issued to Basel Kelziye.
+SBY 13:25:54 [fpnew_top_cvr] smt2: Customer PoC: Basel Kelziye &lt;basel.kelziye@estudiantat.upc.edu&gt;.
+SBY 13:25:54 [fpnew_top_cvr] smt2: finished (returncode=0)
+SBY 13:25:54 [fpnew_top_cvr] engine_0: starting process &quot;cd fpnew_top_cvr; yosys-smtbmc -s yices --presat --unroll -c --noprogress -t 15  --append 0 --dump-vcd engine_0/trace%.vcd --dump-yw engine_0/trace%.yw --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY 13:25:54 [fpnew_top_cvr] engine_0: ##   0:00:00  Solver: yices
+SBY 13:25:56 [fpnew_top_cvr] engine_0: ##   0:00:01  Checking cover reachability in step 0..
+SBY 13:25:56 [fpnew_top_cvr] engine_0: ##   0:00:02  Checking cover reachability in step 1..
+SBY 13:25:57 [fpnew_top_cvr] engine_0: ##   0:00:02  Checking cover reachability in step 2..
+SBY 13:25:57 [fpnew_top_cvr] engine_0: ##   0:00:02  Checking cover reachability in step 3..
+SBY 13:25:58 [fpnew_top_cvr] engine_0: ##   0:00:03  Checking cover reachability in step 4..
+SBY 13:25:58 [fpnew_top_cvr] engine_0: ##   0:00:04  Checking cover reachability in step 5..
+SBY 13:25:59 [fpnew_top_cvr] engine_0: ##   0:00:04  Reached cover statement in step 5 at fpnew_top.fpnew_top_b: c_out_handshake
+SBY 13:25:59 [fpnew_top_cvr] engine_0: ##   0:00:04  Writing trace to VCD file: engine_0/trace0.vcd
+SBY 13:26:04 [fpnew_top_cvr] engine_0: ##   0:00:09  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY 13:26:04 [fpnew_top_cvr] engine_0: ##   0:00:09  Writing trace to constraints file: engine_0/trace0.smtc
+SBY 13:26:04 [fpnew_top_cvr] engine_0: ##   0:00:09  Writing trace to Yosys witness file: engine_0/trace0.yw
+SBY 13:26:04 [fpnew_top_cvr] engine_0: ##   0:00:10  Checking cover reachability in step 5..
+SBY 13:26:05 [fpnew_top_cvr] engine_0: ##   0:00:10  Reached cover statement in step 5 at fpnew_top.\gen_operation_groups[3].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi .cast_handshake: c_out_handshake
+SBY 13:26:05 [fpnew_top_cvr] engine_0: ##   0:00:10  Writing trace to VCD file: engine_0/trace1.vcd
+SBY 13:26:10 [fpnew_top_cvr] engine_0: ##   0:00:15  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+SBY 13:26:10 [fpnew_top_cvr] engine_0: ##   0:00:15  Writing trace to constraints file: engine_0/trace1.smtc
+SBY 13:26:10 [fpnew_top_cvr] engine_0: ##   0:00:15  Writing trace to Yosys witness file: engine_0/trace1.yw
+SBY 13:26:10 [fpnew_top_cvr] engine_0: ##   0:00:16  Checking cover reachability in step 5..
+SBY 13:26:11 [fpnew_top_cvr] engine_0: ##   0:00:16  Checking cover reachability in step 6..
+SBY 13:26:11 [fpnew_top_cvr] engine_0: ##   0:00:17  Checking cover reachability in step 7..
+SBY 13:26:12 [fpnew_top_cvr] engine_0: ##   0:00:17  Reached cover statement in step 7 at fpnew_top.\gen_operation_groups[1].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi .divsqrt_handshake: c_out_handshake
+SBY 13:26:12 [fpnew_top_cvr] engine_0: ##   0:00:17  Writing trace to VCD file: engine_0/trace2.vcd
+SBY 13:26:19 [fpnew_top_cvr] engine_0: ##   0:00:24  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+SBY 13:26:19 [fpnew_top_cvr] engine_0: ##   0:00:24  Writing trace to constraints file: engine_0/trace2.smtc
+SBY 13:26:19 [fpnew_top_cvr] engine_0: ##   0:00:24  Writing trace to Yosys witness file: engine_0/trace2.yw
+SBY 13:26:19 [fpnew_top_cvr] engine_0: ##   0:00:25  Status: passed
+SBY 13:26:19 [fpnew_top_cvr] engine_0: finished (returncode=0)
+SBY 13:26:19 [fpnew_top_cvr] engine_0: Status returned by engine: pass
+SBY 13:26:19 [fpnew_top_cvr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:31 (31)
+SBY 13:26:19 [fpnew_top_cvr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:33 (33)
+SBY 13:26:19 [fpnew_top_cvr] summary: engine_0 (smtbmc yices) returned pass
+SBY 13:26:19 [fpnew_top_cvr] summary: cover trace: fpnew_top_cvr/engine_0/trace0.vcd
+SBY 13:26:19 [fpnew_top_cvr] summary:   reached cover statement fpnew_top.fpnew_top_b.c_out_handshake at handshake_checker.sv:67.18-69.3 step 5
+SBY 13:26:19 [fpnew_top_cvr] summary: cover trace: fpnew_top_cvr/engine_0/trace1.vcd
+SBY 13:26:19 [fpnew_top_cvr] summary:   reached cover statement fpnew_top.\gen_operation_groups[3].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi .cast_handshake.c_out_handshake at handshake_checker.sv:67.18-69.3 step 5
+SBY 13:26:19 [fpnew_top_cvr] summary: cover trace: fpnew_top_cvr/engine_0/trace2.vcd
+SBY 13:26:19 [fpnew_top_cvr] summary:   reached cover statement fpnew_top.\gen_operation_groups[1].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi .divsqrt_handshake.c_out_handshake at handshake_checker.sv:67.18-69.3 step 7
+SBY 13:26:19 [fpnew_top_cvr] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

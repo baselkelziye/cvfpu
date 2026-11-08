@@ -1,0 +1,41 @@
+SBY 22:28:22 [fma_fp16] Removing directory '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/fpnew_pkg.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fpnew_pkg.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/common_cells/include/common_cells/registers.svh' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/common_cells/registers.svh'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/fpnew_classifier.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fpnew_classifier.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/fpnew_rounding.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fpnew_rounding.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../vendor/cvw/fma/fmalza.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fmalza.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../fv_common/handshake_checker.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/handshake_checker.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/common_cells/src/lzc.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/lzc.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/common_cells/src/cf_math_pkg.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/cf_math_pkg.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/fpnew_fma_multi.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fpnew_fma_multi.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/../../src/fpnew_fma.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fpnew_fma.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fp16_add_rne.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fp16_add_rne.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fp16_classify.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/fp16_classify.sv'.
+SBY 22:28:22 [fma_fp16] Copy '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/tb_fma.sv' to '/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/src/tb_fma.sv'.
+SBY 22:28:22 [fma_fp16] engine_0: smtbmc z3 -- --logic=ALL
+SBY 22:28:22 [fma_fp16] base: starting process "cd fma_fp16/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 22:28:22 [fma_fp16] base: This is an ACADEMIC LICENSE of TabbyCAD Suite.
+SBY 22:28:22 [fma_fp16] base: This license is granted for the limited purpose of academic and/or research activities.
+SBY 22:28:22 [fma_fp16] base: It is forbidden to use this license to perform services for a fee or other consideration; or in the generation or verification of hardware or hardware designs for sale or license with a view to profit or for a fee or other consideration.
+SBY 22:28:22 [fma_fp16] base: This license was issued to Basel Kelziye.
+SBY 22:28:22 [fma_fp16] base: Customer PoC: Basel Kelziye <basel.kelziye@estudiantat.upc.edu>.
+SBY 22:28:22 [fma_fp16] base: VERIFIC-WARNING [VERI-1158] tb_fma.sv:15: use of undefined macro 'error'
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1137] tb_fma.sv:15: syntax error near '"No FP format defined: compile with -DFP16, -DFP32, or -DFP64'
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1137] tb_fma.sv:32: syntax error near '"No rounding mode defined: compile with -DRNE, -DRTZ, -DRDN, -DRUP, or -DRMM'
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:19: 'FmtSel' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:155: 'FmtSel' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:156: 'FmtSel' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:157: 'FmtSel' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:158: 'ROUNDING_MODE' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:159: 'OPERATION_MOD' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:160: 'OPERATION_TYPE' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1128] tb_fma.sv:161: 'FmtSel' is not declared
+SBY 22:28:22 [fma_fp16] base: VERIFIC-ERROR [VERI-1072] tb_fma.sv:168: module 'tb_fma' is ignored due to previous errors
+SBY 22:28:22 [fma_fp16] base: ERROR: Reading Verilog/SystemVerilog sources failed.
+SBY 22:28:22 [fma_fp16] base: finished (returncode=1)
+SBY 22:28:22 [fma_fp16] base: task failed. ERROR.
+SBY 22:28:22 [fma_fp16] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:28:22 [fma_fp16] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:28:22 [fma_fp16] summary: engine_0 (smtbmc z3 -- --logic=ALL) did not return a status
+SBY 22:28:22 [fma_fp16] summary: engine_0 did not produce any traces
+SBY 22:28:22 [fma_fp16] DONE (ERROR, rc=16)

@@ -1,0 +1,64 @@
+[tasks]
+bmc
+cvr
+prf
+
+[options]
+bmc: mode bmc
+cvr: mode cover
+prf: mode prove
+depth 16
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+verific -sv -DFORMAL \
+  fpnew_pkg.sv                    \
+  cf_math_pkg.sv                  \
+  rr_arb_tree.sv                  \
+  lzc.sv                          \
+  defs_div_sqrt_mvp.sv            \
+  control_mvp.sv                  \
+  div_sqrt_mvp_wrapper.sv         \
+  div_sqrt_top_mvp.sv             \
+  iteration_div_sqrt_mvp.sv       \
+  norm_div_sqrt_mvp.sv            \
+  nrbd_nrsc_mvp.sv                \
+  preprocess_mvp.sv               \
+  fpnew_divsqrt_multi.sv          \
+  fpnew_opgroup_multifmt_slice.sv \
+  fpnew_opgroup_block.sv          \
+  handshake_checker.sv            \
+  divsqrt_handshake_bind.sv       \
+  divsqrt_props.sv                \
+  tb_divsqrt.sv
+
+verific -import -extnets tb_divsqrt
+
+prep -top tb_divsqrt
+
+[files]
+fpnew_pkg.sv                     ../../src/fpnew_pkg.sv
+cf_math_pkg.sv                   ../../src/common_cells/src/cf_math_pkg.sv
+rr_arb_tree.sv                   ../../src/common_cells/src/rr_arb_tree.sv
+lzc.sv                           ../../src/common_cells/src/lzc.sv
+# OpenC910 / MVP DivSqrt Core files
+defs_div_sqrt_mvp.sv             ../../src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
+control_mvp.sv                   ../../src/fpu_div_sqrt_mvp/hdl/control_mvp.sv
+div_sqrt_mvp_wrapper.sv          ../../src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
+div_sqrt_top_mvp.sv              ../../src/fpu_div_sqrt_mvp/hdl/div_sqrt_top_mvp.sv
+iteration_div_sqrt_mvp.sv        ../../src/fpu_div_sqrt_mvp/hdl/iteration_div_sqrt_mvp.sv
+norm_div_sqrt_mvp.sv             ../../src/fpu_div_sqrt_mvp/hdl/norm_div_sqrt_mvp.sv
+nrbd_nrsc_mvp.sv                 ../../src/fpu_div_sqrt_mvp/hdl/nrbd_nrsc_mvp.sv
+preprocess_mvp.sv                ../../src/fpu_div_sqrt_mvp/hdl/preprocess_mvp.sv
+# CVFPU DivSqrt wrappers
+fpnew_divsqrt_multi.sv           ../../src/fpnew_divsqrt_multi.sv
+fpnew_opgroup_multifmt_slice.sv  ../../src/fpnew_opgroup_multifmt_slice.sv
+fpnew_opgroup_block.sv           ../../src/fpnew_opgroup_block.sv
+common_cells/registers.svh       ../../src/common_cells/include/common_cells/registers.svh
+# Formal Verification Files
+handshake_checker.sv             ../fv_common/handshake_checker.sv
+divsqrt_handshake_bind.sv        divsqrt_bind.sv
+tb_divsqrt.sv                    tb_divsqrt.sv
+divsqrt_props.sv                 divsqrt_props.sv

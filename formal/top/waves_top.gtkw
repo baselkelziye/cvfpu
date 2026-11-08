@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sun Aug 16 11:04:56 2026
+[*]
+[dumpfile] "/home/basel-ubuntu/Desktop/cvfpu/formal/top/fpnew_top_cvr/engine_0/trace0.vcd"
+[dumpfile_mtime] "Sun Aug 16 10:59:37 2026"
+[dumpfile_size] 343703
+[savefile] "/home/basel-ubuntu/Desktop/cvfpu/formal/top/waves_top.gtkw"
+[timestart] 0
+[size] 1300 689
+[pos] -27 -24
+*-3.814586 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 376
+[signals_width] 348
+[sst_expanded] 1
+[sst_vpaned_height] 189
+@28
+fpnew_top.clk_i
+fpnew_top.flush_i
+fpnew_top.rst_ni
+fpnew_top.in_valid_i
+fpnew_top.in_ready_o
+fpnew_top.out_valid_o
+fpnew_top.out_ready_i
+[pattern_trace] 1
+[pattern_trace] 0

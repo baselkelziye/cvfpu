@@ -1,0 +1,81 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sun Aug  2 15:50:09 2026
+[*]
+[dumpfile] "/home/basel-ubuntu/Desktop/cvfpu/formal/pulp-divsqrt/divsqrt_bmc/engine_0/trace.vcd"
+[dumpfile_mtime] "Sun Aug  2 15:48:43 2026"
+[dumpfile_size] 101716
+[savefile] "/home/basel-ubuntu/Desktop/cvfpu/formal/pulp-divsqrt/waves_divsqrt.gtkw"
+[timestart] 0
+[size] 1300 689
+[pos] -27 -24
+*-4.962119 10 50 60 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_divsqrt.
+[treeopen] tb_divsqrt.i_opgroup_block.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.i_divsqrt_lei.nrbd_nrsc_U0.
+[treeopen] tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.i_divsqrt_lei.preprocess_U0.
+[sst_width] 369
+[signals_width] 250
+[sst_expanded] 1
+[sst_vpaned_height] 260
+@28
+tb_divsqrt.clk_i
+tb_divsqrt.rst_ni
+tb_divsqrt.flush_i
+tb_divsqrt.in_ready_o
+tb_divsqrt.in_valid_i
+tb_divsqrt.out_ready_i
+tb_divsqrt.out_valid_o
+@200
+-
+@28
+tb_divsqrt.i_opgroup_block.fmt_in_ready[1:0]
+@23
+tb_divsqrt.i_opgroup_block.fmt_out_ready[4:0]
+@24
+tb_divsqrt.i_opgroup_block.dst_fmt_i[2:0]
+@800200
+-arbiter
+@28
+tb_divsqrt.i_opgroup_block.i_arbiter.gnt_i
+tb_divsqrt.i_opgroup_block.i_arbiter.rr_i[2:0]
+tb_divsqrt.i_opgroup_block.i_arbiter.flush_i
+@22
+tb_divsqrt.i_opgroup_block.i_arbiter.req_i[4:0]
+tb_divsqrt.i_opgroup_block.fmt_out_ready[4:0]
+@1000200
+-arbiter
+@200
+-
+@800200
+-multifmt_lane0
+@28
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.clk_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.in_ready_o
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.in_valid_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.lane_in_ready[1:0]
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.out_ready_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.out_valid_o
+@800200
+-lane0
+@28
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.in_ready_o
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.in_valid_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.reg_ena_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.out_ready_i
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.out_valid_o
+tb_divsqrt.i_opgroup_block.gen_merged_slice.i_multifmt_slice.gen_num_lanes<0>.active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi.dst_fmt_i[2:0]
+@1000200
+-lane0
+@28
+tb_divsqrt.i_opgroup_block.i_arbiter.gnt_i
+@22
+tb_divsqrt.i_opgroup_block.i_arbiter.gnt_o[4:0]
+@1000200
+-multifmt_lane0
+[pattern_trace] 1
+[pattern_trace] 0

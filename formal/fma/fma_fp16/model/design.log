@@ -1,0 +1,41 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite -- YosysHQ Edition [202607091025]     |
+ |  Copyright (C) 2012 - 2026 YosysHQ GmbH                                    |
+ |  For support, please contact support@yosyshq.com                           |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /usr/bin/clang++ 18.1.8) [github.com/YosysHQ/yosys at yosys-slang]
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing VERIFIC (loading SystemVerilog and VHDL designs using Verific).
+Built with Verific Jun26_SW_Release, released at Wed Jul  1 00:37:29 2026.
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fpnew_pkg.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fp16_add_rne.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'cf_math_pkg.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'lzc.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fp16_classify.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fpnew_rounding.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fmalza.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fpnew_fma_multi.sv'
+VERIFIC-INFO [VERI-1328] fpnew_fma_multi.sv:16: analyzing included file 'common_cells/registers.svh'
+VERIFIC-INFO [VERI-2320] fpnew_fma_multi.sv:16: back to file 'fpnew_fma_multi.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fpnew_fma.sv'
+VERIFIC-INFO [VERI-1328] fpnew_fma.sv:16: analyzing included file 'common_cells/registers.svh'
+VERIFIC-INFO [VERI-2320] fpnew_fma.sv:16: back to file 'fpnew_fma.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'handshake_checker.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'fpnew_classifier.sv'
+VERIFIC-COMMENT [VERI-1482] Analyzing Verilog file 'tb_fma.sv'
+VERIFIC-WARNING [VERI-1158] tb_fma.sv:15: use of undefined macro 'error'
+VERIFIC-ERROR [VERI-1137] tb_fma.sv:15: syntax error near '"No FP format defined: compile with -DFP16, -DFP32, or -DFP64'
+VERIFIC-ERROR [VERI-1137] tb_fma.sv:32: syntax error near '"No rounding mode defined: compile with -DRNE, -DRTZ, -DRDN, -DRUP, or -DRMM'
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:19: 'FmtSel' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:155: 'FmtSel' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:156: 'FmtSel' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:157: 'FmtSel' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:158: 'ROUNDING_MODE' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:159: 'OPERATION_MOD' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:160: 'OPERATION_TYPE' is not declared
+VERIFIC-ERROR [VERI-1128] tb_fma.sv:161: 'FmtSel' is not declared
+VERIFIC-ERROR [VERI-1072] tb_fma.sv:168: module 'tb_fma' is ignored due to previous errors
+ERROR: Reading Verilog/SystemVerilog sources failed.

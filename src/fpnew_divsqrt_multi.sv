@@ -180,7 +180,8 @@ module fpnew_divsqrt_multi #(
   logic div_valid, sqrt_valid;  // input signalling with unit
   logic unit_ready, unit_done, unit_done_q;  // status signals from unit instance
   logic op_starting;            // high in the cycle a new operation starts
-  logic out_valid, out_ready;   // output handshake with downstream
+  logic out_ready;                // output ready handshake with downstream
+  logic out_valid_d, out_valid_q; // output valid handshake with downstream
   logic unit_busy;              // valid data in flight
   logic simd_synch_done;
   // FSM states
@@ -228,7 +229,7 @@ module fpnew_divsqrt_multi #(
   always_comb begin : flag_fsm
     // Default assignments
     in_ready     = 1'b0;
-    out_valid    = 1'b0;
+    out_valid_d  = out_valid_q;
     unit_busy    = 1'b0;
     state_d      = state_q;
 
@@ -245,7 +246,7 @@ module fpnew_divsqrt_multi #(
         unit_busy = 1'b1; // data in flight
         // If all the lanes are done with processing
         if (simd_synch_done_i || (~result_vec_op_q && unit_done)) begin
-          out_valid = 1'b1; // try to commit result downstream
+          out_valid_d = 1'b1; // try to commit result downstream
           // If downstream accepts our result
           if (out_ready) begin
             state_d = IDLE; // we anticipate going back to idling..
@@ -262,7 +263,7 @@ module fpnew_divsqrt_multi #(
       // Waiting with valid result for downstream
       HOLD: begin
         unit_busy    = 1'b1; // data in flight
-        out_valid    = 1'b1; // try to commit result downstream
+        out_valid_d    = 1'b1; // try to commit result downstream
         // If the result is accepted by downstream
         if (out_ready) begin
           state_d = IDLE; // go back to idle..
@@ -279,13 +280,14 @@ module fpnew_divsqrt_multi #(
     // Flushing overrides the other actions
     if (flush_i) begin
       unit_busy = 1'b0; // data is invalidated
-      out_valid = 1'b0; // cancel any valid data
+      out_valid_d = 1'b0; // cancel any valid data
       state_d   = IDLE; // go to default state
     end
   end
 
   // FSM status register (asynch active low reset)
   `FF(state_q, state_d, IDLE)
+  `FF(out_valid_q, out_valid_d, 1'b0)
 
   // -----------------
   // DIVSQRT instance
@@ -350,7 +352,7 @@ module fpnew_divsqrt_multi #(
   assign out_pipe_tag_q[0]    = result_tag_q;
   assign out_pipe_mask_q[0]   = result_mask_q;
   assign out_pipe_aux_q[0]    = result_aux_q;
-  assign out_pipe_valid_q[0]  = out_valid;
+  assign out_pipe_valid_q[0]  = out_valid_q;
   // Input stage: Propagate pipeline ready signal to inside pipe
   assign out_ready = out_pipe_ready[0];
   // Generate the register stages

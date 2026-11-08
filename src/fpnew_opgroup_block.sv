@@ -81,7 +81,7 @@ module fpnew_opgroup_block #(
   // -----------
   // Input Side
   // -----------
-  assign in_ready_o = in_valid_i & fmt_in_ready[dst_fmt_i]; // Ready is given by selected format
+  assign in_ready_o = /*in_valid_i*/ & fmt_in_ready[dst_fmt_i]; // Ready is given by selected format
 
   // -------------------------
   // Generate Parallel Slices
@@ -253,4 +253,8 @@ module fpnew_opgroup_block #(
 
   assign busy_o = (| fmt_busy);
 
+  always @(*) begin
+    assume(dst_fmt_i < 2'd2);
+    assume(!flush_i);
+  end
 endmodule

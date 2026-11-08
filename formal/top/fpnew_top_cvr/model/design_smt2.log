@@ -1,0 +1,1236 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite -- YosysHQ Edition [202607091025]     |
+ |  Copyright (C) 2012 - 2026 YosysHQ GmbH                                    |
+ |  For support, please contact support@yosyshq.com                           |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /usr/bin/clang++ 18.1.8) [github.com/YosysHQ/yosys at yosys-slang]
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `fpnew_top'. Setting top module to fpnew_top.
+
+2.1. Analyzing design hierarchy..
+Top module:  \fpnew_top
+Used module:     \handshake_checker_default
+Used module:     \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)
+Used module:                 \fpnew_rounding(AbsWidth=32'b011111)
+Used module:                 \lzc(WIDTH=32'b0110011,MODE=1'b1)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)
+Used module:                 \fpnew_rounding(AbsWidth=32'b0111111)
+Used module:                 \lzc(WIDTH=32'b01101101,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:             \lzc(WIDTH=32'b0101)
+Used module:     \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+Used module:                 \handshake_checker(ASSUME_ENV=1'b0)
+Used module:                 \div_sqrt_top_mvp
+Used module:                     \norm_div_sqrt_mvp
+Used module:                     \nrbd_nrsc_mvp
+Used module:                         \control_mvp_default
+Used module:                             \iteration_div_sqrt_mvp(WIDTH=58)
+Used module:                     \preprocess_mvp
+Used module:                         \lzc(WIDTH=32'b0110101,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg)
+Used module:                 \fpnew_rounding(AbsWidth=32'b01000000)
+Used module:                 \lzc(WIDTH=32'b01000000,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)
+Used module:         \lzc(WIDTH=32'b0100)
+
+2.2. Analyzing design hierarchy..
+Top module:  \fpnew_top
+Used module:     \handshake_checker_default
+Used module:     \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)
+Used module:                 \fpnew_rounding(AbsWidth=32'b011111)
+Used module:                 \lzc(WIDTH=32'b0110011,MODE=1'b1)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)
+Used module:                 \fpnew_rounding(AbsWidth=32'b0111111)
+Used module:                 \lzc(WIDTH=32'b01101101,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:             \lzc(WIDTH=32'b0101)
+Used module:     \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+Used module:                 \handshake_checker(ASSUME_ENV=1'b0)
+Used module:                 \div_sqrt_top_mvp
+Used module:                     \norm_div_sqrt_mvp
+Used module:                     \nrbd_nrsc_mvp
+Used module:                         \control_mvp_default
+Used module:                             \iteration_div_sqrt_mvp(WIDTH=58)
+Used module:                     \preprocess_mvp
+Used module:                         \lzc(WIDTH=32'b0110101,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)
+Used module:         \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:         \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+Used module:             \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+Used module:                 \fpnew_classifier(FpFormat=FP32_fpnew_pkg)
+Used module:                 \fpnew_classifier(FpFormat=FP64_fpnew_pkg)
+Used module:                 \fpnew_rounding(AbsWidth=32'b01000000)
+Used module:                 \lzc(WIDTH=32'b01000000,MODE=1'b1)
+Used module:         \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+Used module:     \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)
+Used module:         \lzc(WIDTH=32'b0100)
+Removed 0 unused modules.
+Module fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module fpnew_top directly or indirectly contains formal properties -> setting "keep" attribute.
+Module handshake_checker(ASSUME_ENV=1'b0) directly or indirectly contains formal properties -> setting "keep" attribute.
+Module handshake_checker_default directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== control_mvp_default ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      489 wires
+    11379 wire bits
+      242 public wires
+     6899 public wire bits
+       27 ports
+      227 port bits
+      258 cells
+        3   $add
+        8   $and
+       12   $anyinit
+        4   $anyseq
+        1   $assume
+       10   $bmux
+       40   $eq
+        3   $logic_not
+      110   $mux
+       29   $not
+        3   $or
+       14   $pmux
+       21   $reduce_or
+        3 submodules
+        3   iteration_div_sqrt_mvp(WIDTH=58)
+
+=== div_sqrt_top_mvp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       39 wires
+      436 wire bits
+       39 public wires
+      436 public wire bits
+       14 ports
+      215 port bits
+        3 submodules
+        1   norm_div_sqrt_mvp
+        1   nrbd_nrsc_mvp
+        1   preprocess_mvp
+
+=== fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      405 wires
+     6885 wire bits
+      293 public wires
+     5428 public wire bits
+       31 ports
+      179 port bits
+      181 cells
+        7   $add
+       23   $and
+       11   $anyseq
+       20   $bmux
+       12   $eq
+        3   $le
+        7   $logic_not
+        2   $lt
+       44   $mux
+        1   $ne
+        3   $neg
+       13   $not
+       13   $or
+        4   $reduce_or
+        4   $shl
+        1   $shr
+       13   $sub
+        5 submodules
+        1   fpnew_classifier(FpFormat=FP32_fpnew_pkg)
+        1   fpnew_classifier(FpFormat=FP64_fpnew_pkg)
+        1   fpnew_rounding(AbsWidth=32'b01000000)
+        1   handshake_checker(ASSUME_ENV=1'b0)
+        1   lzc(WIDTH=32'b01000000,MODE=1'b1)
+
+=== fpnew_classifier(FpFormat=FP32_fpnew_pkg) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+       96 wire bits
+       21 public wires
+       81 public wire bits
+       10 ports
+       41 port bits
+       22 cells
+       11   $and
+        1   $eq
+        2   $logic_not
+        1   $ne
+        4   $not
+        1   $or
+        2   $reduce_bool
+
+=== fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       71 wires
+      192 wire bits
+       41 public wires
+      162 public wire bits
+       19 ports
+       82 port bits
+       44 cells
+       22   $and
+        2   $eq
+        4   $logic_not
+        2   $ne
+        8   $not
+        2   $or
+        4   $reduce_bool
+
+=== fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      106 wires
+      288 wire bits
+       61 public wires
+      243 public wire bits
+       28 ports
+      123 port bits
+       66 cells
+       33   $and
+        3   $eq
+        6   $logic_not
+        3   $ne
+       12   $not
+        3   $or
+        6   $reduce_bool
+
+=== fpnew_classifier(FpFormat=FP64_fpnew_pkg) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       36 wires
+      160 wire bits
+       21 public wires
+      145 public wire bits
+       10 ports
+       73 port bits
+       22 cells
+       11   $and
+        1   $eq
+        2   $logic_not
+        1   $ne
+        4   $not
+        1   $or
+        2   $reduce_bool
+
+=== fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       71 wires
+      320 wire bits
+       41 public wires
+      290 public wire bits
+       19 ports
+      146 port bits
+       44 cells
+       22   $and
+        2   $eq
+        4   $logic_not
+        2   $ne
+        8   $not
+        2   $or
+        4   $reduce_bool
+
+=== fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      106 wires
+      480 wire bits
+       61 public wires
+      435 public wire bits
+       28 ports
+      219 port bits
+       66 cells
+       33   $and
+        3   $eq
+        6   $logic_not
+        3   $ne
+       12   $not
+        3   $or
+        6   $reduce_bool
+
+=== fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      178 wires
+     1195 wire bits
+      123 public wires
+     1059 public wire bits
+       38 ports
+      247 port bits
+       96 cells
+       10   $and
+       11   $anyinit
+        3   $anyseq
+        1   $assume
+        4   $bmux
+        4   $eq
+        1   $logic_not
+       41   $mux
+        1   $ne
+        7   $not
+        9   $or
+        1   $pmux
+        3   $reduce_or
+        2 submodules
+        1   div_sqrt_top_mvp
+        1   handshake_checker(ASSUME_ENV=1'b0)
+
+=== fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      314 wires
+     2684 wire bits
+      226 public wires
+     1896 public wire bits
+       30 ports
+      161 port bits
+      132 cells
+       10   $add
+       13   $and
+        8   $eq
+        6   $le
+        4   $logic_not
+        2   $lt
+        1   $mul
+       37   $mux
+        1   $ne
+       10   $not
+       11   $or
+        6   $pmux
+       11   $reduce_or
+        1   $shl
+        1   $shr
+        6   $sub
+        4   $xor
+        3 submodules
+        1   fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)
+        1   fpnew_rounding(AbsWidth=32'b011111)
+        1   lzc(WIDTH=32'b0110011,MODE=1'b1)
+
+=== fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      314 wires
+     4991 wire bits
+      226 public wires
+     3628 public wire bits
+       30 ports
+      289 port bits
+      132 cells
+       10   $add
+       13   $and
+        8   $eq
+        6   $le
+        4   $logic_not
+        2   $lt
+        1   $mul
+       37   $mux
+        1   $ne
+       10   $not
+       11   $or
+        6   $pmux
+       11   $reduce_or
+        1   $shl
+        1   $shr
+        6   $sub
+        4   $xor
+        3 submodules
+        1   fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)
+        1   fpnew_rounding(AbsWidth=32'b0111111)
+        1   lzc(WIDTH=32'b01101101,MODE=1'b1)
+
+=== fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      199 wires
+     1147 wire bits
+      146 public wires
+      543 public wire bits
+       31 ports
+      139 port bits
+       67 cells
+        6   $and
+        1   $assume
+        8   $eq
+        1   $logic_not
+        1   $lt
+       16   $mux
+        9   $not
+        6   $or
+        6   $pmux
+        8   $reduce_or
+        5   $xor
+        1 submodules
+        1   fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)
+
+=== fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      199 wires
+     2043 wire bits
+      146 public wires
+      927 public wire bits
+       31 ports
+      235 port bits
+       67 cells
+        6   $and
+        1   $assume
+        8   $eq
+        1   $logic_not
+        1   $lt
+       16   $mux
+        9   $not
+        6   $or
+        6   $pmux
+        8   $reduce_or
+        5   $xor
+        1 submodules
+        1   fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)
+
+=== fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       99 wires
+      821 wire bits
+       94 public wires
+      816 public wire bits
+       34 ports
+      306 port bits
+       13 cells
+        2   $and
+        1   $anyseq
+        2   $assume
+        1   $bmux
+        1   $eq
+        1   $logic_not
+        1   $lt
+        2   $not
+        2   $reduce_or
+        3 submodules
+        1   fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+
+=== fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       95 wires
+      766 wire bits
+       90 public wires
+      760 public wire bits
+       34 ports
+      306 port bits
+       11 cells
+        1   $and
+        2   $anyseq
+        2   $assume
+        2   $bmux
+        1   $eq
+        1   $lt
+        2   $not
+        2 submodules
+        1   fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+
+=== fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       95 wires
+      698 wire bits
+       89 public wires
+      691 public wire bits
+       33 ports
+      237 port bits
+       13 cells
+        1   $and
+        2   $anyseq
+        3   $assume
+        2   $bmux
+        1   $eq
+        1   $lt
+        3   $not
+        2 submodules
+        1   fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+
+=== fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       98 wires
+      752 wire bits
+       93 public wires
+      747 public wire bits
+       33 ports
+      237 port bits
+       13 cells
+        2   $and
+        1   $anyseq
+        2   $assume
+        1   $bmux
+        1   $eq
+        1   $logic_not
+        1   $lt
+        2   $not
+        2   $reduce_or
+        3 submodules
+        1   fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+
+=== fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       70 wires
+      712 wire bits
+       70 public wires
+      712 public wire bits
+       28 ports
+      287 port bits
+        3 cells
+        1   $and
+        2   $mux
+        1 submodules
+        1   fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+
+=== fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       70 wires
+      904 wire bits
+       70 public wires
+      904 public wire bits
+       28 ports
+      287 port bits
+        3 cells
+        1   $and
+        2   $mux
+        1 submodules
+        1   fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+
+=== fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       79 wires
+      579 wire bits
+       69 public wires
+      569 public wire bits
+       27 ports
+      222 port bits
+       23 cells
+        1   $and
+       10   $eq
+        4   $mux
+        1   $not
+        7   $or
+        1 submodules
+        1   fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+
+=== fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       79 wires
+      739 wire bits
+       69 public wires
+      729 public wire bits
+       27 ports
+      222 port bits
+       23 cells
+        1   $and
+       10   $eq
+        4   $mux
+        1   $not
+        7   $or
+        1 submodules
+        1   fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+
+=== fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      111 wires
+     1901 wire bits
+      108 public wires
+     1709 public wire bits
+       35 ports
+      307 port bits
+       11 cells
+        1   $and
+        2   $anyseq
+        2   $bmux
+        1   $eq
+        5   $mux
+        1 submodules
+        1   fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+
+=== fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      113 wires
+     1866 wire bits
+      109 public wires
+     1673 public wire bits
+       34 ports
+      238 port bits
+       11 cells
+        1   $and
+        2   $anyseq
+        1   $assume
+        2   $bmux
+        4   $mux
+        1   $not
+        1 submodules
+        1   fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+
+=== fpnew_rounding(AbsWidth=32'b01000000) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+      149 wire bits
+        9 public wires
+      138 public wire bits
+        8 ports
+      137 port bits
+       15 cells
+        1   $add
+        3   $and
+        2   $bmux
+        1   $eq
+        2   $logic_not
+        3   $mux
+        2   $not
+        1   $reduce_or
+
+=== fpnew_rounding(AbsWidth=32'b011111) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+       83 wire bits
+        9 public wires
+       72 public wire bits
+        8 ports
+       71 port bits
+       15 cells
+        1   $add
+        3   $and
+        2   $bmux
+        1   $eq
+        2   $logic_not
+        3   $mux
+        2   $not
+        1   $reduce_or
+
+=== fpnew_rounding(AbsWidth=32'b0111111) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       20 wires
+      147 wire bits
+        9 public wires
+      136 public wire bits
+        8 ports
+      135 port bits
+       15 cells
+        1   $add
+        3   $and
+        2   $bmux
+        1   $eq
+        2   $logic_not
+        3   $mux
+        2   $not
+        1   $reduce_or
+
+=== fpnew_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      119 wires
+      879 wire bits
+      103 public wires
+      862 public wire bits
+       28 ports
+      290 port bits
+       27 cells
+        5   $and
+        1   $assume
+        2   $bmux
+       12   $eq
+        1   $logic_not
+        3   $mux
+        1   $not
+        2   $reduce_or
+        6 submodules
+        1   fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   handshake_checker_default
+        1   rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)
+
+=== handshake_checker(ASSUME_ENV=1'b0) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       17 wires
+       17 wire bits
+        9 public wires
+        9 public wire bits
+        9 ports
+        9 port bits
+       10 cells
+        1   $and
+        1   $assume
+        1   $cover
+        2   $ff
+        4   $mux
+        1   $not
+
+=== handshake_checker_default ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       47 wires
+       53 wire bits
+       11 public wires
+       13 public wire bits
+        9 ports
+        9 port bits
+       44 cells
+        1   $add
+        4   $and
+        5   $assume
+        1   $cover
+        5   $eq
+        6   $ff
+        1   $lt
+       11   $mux
+       10   $not
+
+=== iteration_div_sqrt_mvp(WIDTH=58) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       15 wires
+      245 wire bits
+       12 public wires
+      185 public wire bits
+        9 ports
+      182 port bits
+        7 cells
+        2   $add
+        1   $and
+        1   $mux
+        1   $not
+        1   $or
+        1   $xor
+
+=== lzc(WIDTH=32'b0100) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+       58 wire bits
+       13 public wires
+       58 public wire bits
+        3 ports
+        7 port bits
+        7 cells
+        3   $_OR_
+        3   $mux
+        1   $not
+
+=== lzc(WIDTH=32'b01000000,MODE=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      133 wires
+      832 wire bits
+      133 public wires
+      832 public wire bits
+        3 ports
+       71 port bits
+      127 cells
+       63   $_OR_
+       63   $mux
+        1   $not
+
+=== lzc(WIDTH=32'b0101) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       18 wires
+       84 wire bits
+       18 public wires
+       84 public wire bits
+        3 ports
+        9 port bits
+       10 cells
+        5   $mux
+        1   $not
+        4   $or
+
+=== lzc(WIDTH=32'b0110011,MODE=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      120 wires
+      757 wire bits
+      120 public wires
+      757 public wire bits
+        3 ports
+       58 port bits
+      102 cells
+       51   $mux
+        1   $not
+       50   $or
+
+=== lzc(WIDTH=32'b0110101,MODE=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      122 wires
+      769 wire bits
+      122 public wires
+      769 public wire bits
+        3 ports
+       60 port bits
+      107 cells
+       54   $mux
+        1   $not
+       52   $or
+
+=== lzc(WIDTH=32'b01101101,MODE=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      242 wires
+     1704 wire bits
+      242 public wires
+     1704 public wire bits
+        3 ports
+      117 port bits
+      219 cells
+      110   $mux
+        1   $not
+      108   $or
+
+=== norm_div_sqrt_mvp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      182 wires
+     2778 wire bits
+       45 public wires
+      703 public wire bits
+       20 ports
+      157 port bits
+      160 cells
+        4   $add
+       20   $and
+        6   $eq
+        2   $logic_not
+      101   $mux
+        5   $not
+       13   $or
+        1   $pmux
+        1   $reduce_bool
+        5   $reduce_or
+        1   $shr
+        1   $sub
+
+=== nrbd_nrsc_mvp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       28 wires
+      228 wire bits
+       27 public wires
+      227 public wire bits
+       25 ports
+      225 port bits
+        2 cells
+        1   $assume
+        1   $not
+        1 submodules
+        1   control_mvp_default
+
+=== preprocess_mvp ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      159 wires
+     1312 wire bits
+       88 public wires
+      965 public wire bits
+       25 ports
+      282 port bits
+      131 cells
+        2   $add
+       14   $and
+       14   $anyinit
+        1   $assume
+       10   $bmux
+        8   $eq
+        8   $logic_not
+       45   $mux
+        8   $not
+       10   $or
+        6   $reduce_or
+        2   $shl
+        2   $sub
+        1   $xor
+        2 submodules
+        2   lzc(WIDTH=32'b0110101,MODE=1'b1)
+
+=== rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      102 wires
+      638 wire bits
+       83 public wires
+      617 public wire bits
+       44 ports
+      367 port bits
+       43 cells
+        3   $_OR_
+        7   $and
+        1   $anyinit
+        1   $assume
+        3   $le
+        3   $lt
+       15   $mux
+        7   $not
+        3   $or
+        2 submodules
+        2   lzc(WIDTH=32'b0100)
+
+=== rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      160 wires
+     1041 wire bits
+      136 public wires
+     1013 public wire bits
+       57 ports
+      447 port bits
+       62 cells
+       14   $and
+        1   $anyinit
+        1   $assume
+        4   $le
+        4   $lt
+       21   $mux
+        9   $not
+        8   $or
+        2 submodules
+        2   lzc(WIDTH=32'b0101)
+
+=== rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      160 wires
+     1041 wire bits
+      136 public wires
+     1013 public wire bits
+       57 ports
+      447 port bits
+       62 cells
+       14   $and
+        1   $anyinit
+        1   $assume
+        4   $le
+        4   $lt
+       21   $mux
+        9   $not
+        8   $or
+        2 submodules
+        2   lzc(WIDTH=32'b0101)
+
+=== rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      160 wires
+     1041 wire bits
+      136 public wires
+     1013 public wire bits
+       57 ports
+      447 port bits
+       62 cells
+       14   $and
+        1   $anyinit
+        1   $assume
+        4   $le
+        4   $lt
+       21   $mux
+        9   $not
+        8   $or
+        2 submodules
+        2   lzc(WIDTH=32'b0101)
+
+=== rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1) ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      160 wires
+     1041 wire bits
+      136 public wires
+     1013 public wire bits
+       57 ports
+      447 port bits
+       62 cells
+       14   $and
+        1   $anyinit
+        1   $assume
+        4   $le
+        4   $lt
+       21   $mux
+        9   $not
+        8   $or
+        2 submodules
+        2   lzc(WIDTH=32'b0101)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     2818 fpnew_top
+       13 fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        3   fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+      132     fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+       66       fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)
+       15       fpnew_rounding(AbsWidth=32'b011111)
+      102       lzc(WIDTH=32'b0110011,MODE=1'b1)
+        3   fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+      132     fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+       66       fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)
+       15       fpnew_rounding(AbsWidth=32'b0111111)
+      219       lzc(WIDTH=32'b01101101,MODE=1'b1)
+       62   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+       10     lzc(WIDTH=32'b0101)
+       11 fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       11   fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+      181     fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+       22       fpnew_classifier(FpFormat=FP32_fpnew_pkg)
+       22       fpnew_classifier(FpFormat=FP64_fpnew_pkg)
+       15       fpnew_rounding(AbsWidth=32'b01000000)
+       10       handshake_checker(ASSUME_ENV=1'b0)
+      127       lzc(WIDTH=32'b01000000,MODE=1'b1)
+       62   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+       10     lzc(WIDTH=32'b0101)
+       13 fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       11   fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       96     fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])
+      160         norm_div_sqrt_mvp
+        2         nrbd_nrsc_mvp
+      258           control_mvp_default
+        7             iteration_div_sqrt_mvp(WIDTH=58)
+      131         preprocess_mvp
+      107           lzc(WIDTH=32'b0110101,MODE=1'b1)
+       10       handshake_checker(ASSUME_ENV=1'b0)
+       62   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+       10     lzc(WIDTH=32'b0101)
+       13 fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       23   fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       67     fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+       44       fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)
+       23   fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+       67     fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)
+       44       fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)
+       62   rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)
+       10     lzc(WIDTH=32'b0101)
+       44 handshake_checker_default
+       43 rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)
+        7   lzc(WIDTH=32'b0100)
+
+        +----------Count including submodules.
+        | 
+     5797 wires
+    58853 wire bits
+     4439 public wires
+    45459 public wire bits
+     1152 ports
+     9502 port bits
+        - memories
+        - memory bits
+        - processes
+     2818 cells
+       72   $_OR_
+       46   $add
+      343   $and
+       42   $anyinit
+       28   $anyseq
+       29   $assume
+       62   $bmux
+        3   $cover
+      159   $eq
+       10   $ff
+       34   $le
+       64   $logic_not
+       32   $lt
+        2   $mul
+      979   $mux
+       16   $ne
+        3   $neg
+      241   $not
+      440   $or
+       40   $pmux
+       25   $reduce_bool
+       86   $reduce_or
+        8   $shl
+        4   $shr
+       28   $sub
+       22   $xor
+        6 submodules
+        1   fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)
+        1   handshake_checker_default
+        1   rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module norm_div_sqrt_mvp.
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b01101101,MODE=1'b1).
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b0110101,MODE=1'b1).
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b0110011,MODE=1'b1).
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b0101).
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b01000000,MODE=1'b1).
+Creating SMT-LIBv2 representation of module lzc(WIDTH=32'b0100).
+Creating SMT-LIBv2 representation of module iteration_div_sqrt_mvp(WIDTH=58).
+Creating SMT-LIBv2 representation of module handshake_checker_default.
+Creating SMT-LIBv2 representation of module handshake_checker(ASSUME_ENV=1'b0).
+Creating SMT-LIBv2 representation of module fpnew_rounding(AbsWidth=32'b0111111).
+Creating SMT-LIBv2 representation of module fpnew_rounding(AbsWidth=32'b011111).
+Creating SMT-LIBv2 representation of module fpnew_rounding(AbsWidth=32'b01000000).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP64_fpnew_pkg).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010).
+Creating SMT-LIBv2 representation of module fpnew_classifier(FpFormat=FP32_fpnew_pkg).
+Creating SMT-LIBv2 representation of module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Creating SMT-LIBv2 representation of module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Creating SMT-LIBv2 representation of module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Creating SMT-LIBv2 representation of module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Creating SMT-LIBv2 representation of module rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1).
+Creating SMT-LIBv2 representation of module preprocess_mvp.
+Creating SMT-LIBv2 representation of module fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Creating SMT-LIBv2 representation of module fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Creating SMT-LIBv2 representation of module fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Creating SMT-LIBv2 representation of module fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Creating SMT-LIBv2 representation of module fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Creating SMT-LIBv2 representation of module control_mvp_default.
+Creating SMT-LIBv2 representation of module nrbd_nrsc_mvp.
+Creating SMT-LIBv2 representation of module fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module div_sqrt_top_mvp.
+Creating SMT-LIBv2 representation of module fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Creating SMT-LIBv2 representation of module fpnew_top.
+
+End of script. Logfile hash: b67b085948, time: 0.23s, user: 0.22s, system: 0.04s, MEM: 41.60 MB peak
+Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /usr/bin/clang++ 18.1.8) [github.com/YosysHQ/yosys at yosys-slang]
+Time spent: 74% 2x write_smt2 (0 sec), 13% 2x read_rtlil (0 sec), ...

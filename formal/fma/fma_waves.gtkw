@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sat Sep 12 16:04:24 2026
+[*]
+[dumpfile] "/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_fp16/engine_0/trace.vcd"
+[dumpfile_mtime] "Sat Sep 12 15:12:59 2026"
+[dumpfile_size] 77284
+[savefile] "/home/basel-ubuntu/Desktop/cvfpu/formal/fma/fma_waves.gtkw"
+[timestart] 0
+[size] 1300 689
+[pos] -27 -24
+*-5.353006 40 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_fma.
+[sst_width] 297
+[signals_width] 282
+[sst_expanded] 1
+[sst_vpaned_height] 189
+@800200
+-I/O
+@28
+tb_fma.clk_i
+tb_fma.in_ready_o
+tb_fma.in_valid_i
+tb_fma.out_ready_i
+tb_fma.out_valid_o
+tb_fma.mask_i
+tb_fma.u_dut.aux_i
+tb_fma.u_dut.reg_ena_i
+tb_fma.flush_i
+tb_fma.u_dut.op_i[3:0]
+tb_fma.u_dut.op_mod_i
+tb_fma.u_dut.src_fmt_i[2:0]
+tb_fma.u_dut.src2_fmt_i[2:0]
+@29
+tb_fma.u_dut.dst_fmt_i[2:0]
+@28
+tb_fma.rnd_mode_i[2:0]
+@22
+tb_fma.u_dut.operands_i<0>[15:0]
+tb_fma.operands_i<1>[15:0]
+tb_fma.operands_i<2>[15:0]
+@1000200
+-I/O
+@28
+tb_fma.u_dut.is_boxed_i<0>[2:0]
+tb_fma.u_dut.is_boxed_i<1>[2:0]
+tb_fma.u_dut.is_boxed_i<2>[2:0]
+tb_fma.u_dut.is_boxed_i<3>[2:0]
+tb_fma.u_dut.is_boxed_i<4>[2:0]
+@22
+tb_fma.golden_result[15:0]
+tb_fma.result_o[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

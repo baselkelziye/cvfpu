@@ -1,0 +1,579 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite -- YosysHQ Edition [202607091025]     |
+ |  Copyright (C) 2012 - 2026 YosysHQ GmbH                                    |
+ |  For support, please contact support@yosyshq.com                           |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /usr/bin/clang++ 18.1.8) [github.com/YosysHQ/yosys at yosys-slang]
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module control_mvp_default.
+Found 0 SCCs in module div_sqrt_top_mvp.
+Found 0 SCCs in module fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP32_fpnew_pkg).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP64_fpnew_pkg).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010).
+Found 0 SCCs in module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011).
+Found 0 SCCs in module fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Found 0 SCCs in module fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Found 0 SCCs in module fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Found 0 SCCs in module fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Found 0 SCCs in module fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Found 0 SCCs in module fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Found 0 SCCs in module fpnew_rounding(AbsWidth=32'b01000000).
+Found 0 SCCs in module fpnew_rounding(AbsWidth=32'b011111).
+Found 0 SCCs in module fpnew_rounding(AbsWidth=32'b0111111).
+Found 0 SCCs in module fpnew_top.
+Found 0 SCCs in module handshake_checker(ASSUME_ENV=1'b0).
+Found 0 SCCs in module handshake_checker_default.
+Found 0 SCCs in module iteration_div_sqrt_mvp(WIDTH=58).
+Found an SCC: $verific$or_31$lzc.sv:80$17984
+Found 1 SCCs in module lzc(WIDTH=32'b0100).
+Found an SCC: $verific$or_451$lzc.sv:80$13082
+Found 1 SCCs in module lzc(WIDTH=32'b01000000,MODE=1'b1).
+Found 0 SCCs in module lzc(WIDTH=32'b0101).
+Found 0 SCCs in module lzc(WIDTH=32'b0110011,MODE=1'b1).
+Found 0 SCCs in module lzc(WIDTH=32'b0110101,MODE=1'b1).
+Found 0 SCCs in module lzc(WIDTH=32'b01101101,MODE=1'b1).
+Found 0 SCCs in module norm_div_sqrt_mvp.
+Found 0 SCCs in module nrbd_nrsc_mvp.
+Found 0 SCCs in module preprocess_mvp.
+Found an SCC: $verific$or_88$rr_arb_tree.sv:266$17954
+Found 1 SCCs in module rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1).
+Found 0 SCCs in module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Found 0 SCCs in module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Found 0 SCCs in module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Found 0 SCCs in module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Found 3 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping lzc(WIDTH=32'b0100).$verific$or_31$lzc.sv:80$17984 ($or).
+Mapping lzc(WIDTH=32'b01000000,MODE=1'b1).$verific$or_451$lzc.sv:80$13082 ($or).
+Mapping rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1).$verific$or_88$rr_arb_tree.sv:266$17954 ($or).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing control_mvp_default.$verific$Crtl_cnt_S_reg$control_mvp.sv:598$16008 ($aldff): ALOAD=\Rst_RBI, AD=6'000000, D=$verific$n847$15684, Q=\Crtl_cnt_S
+Replacing control_mvp_default.$verific$Div_enable_SO_reg$control_mvp.sv:534$15983 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n765$14838, Q=\Div_enable_SO
+Replacing control_mvp_default.$verific$Div_start_dly_S_reg$control_mvp.sv:518$15977 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n751$14834, Q=\Div_start_dly_S
+Replacing control_mvp_default.$verific$Done_SO_reg$control_mvp.sv:627$16013 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n873$14855, Q=\Done_SO
+Replacing control_mvp_default.$verific$Exp_result_prenorm_DP_reg$control_mvp.sv:3408$16902 ($aldff): ALOAD=\Rst_RBI, AD=13'0000000000000, D=\Exp_result_prenorm_DN, Q=\Exp_result_prenorm_DP
+Replacing control_mvp_default.$verific$Format_sel_S_reg$control_mvp.sv:136$15924 ($aldff): ALOAD=\Rst_RBI, AD=2'00, D=$verific$n607$15671, Q=\Format_sel_S
+Replacing control_mvp_default.$verific$Partial_remainder_DP_reg$control_mvp.sv:2417$16851 ($aldff): ALOAD=\Rst_RBI, AD=58'0000000000000000000000000000000000000000000000000000000000, D=\Partial_remainder_DN, Q=\Partial_remainder_DP
+Replacing control_mvp_default.$verific$Precision_ctl_S_reg$control_mvp.sv:164$15936 ($aldff): ALOAD=\Rst_RBI, AD=6'000000, D=$verific$n646$15675, Q=\Precision_ctl_S
+Replacing control_mvp_default.$verific$Quotient_DP_reg$control_mvp.sv:2463$16859 ($aldff): ALOAD=\Rst_RBI, AD=57'000000000000000000000000000000000000000000000000000000000, D=\Quotient_DN, Q=\Quotient_DP
+Replacing control_mvp_default.$verific$Ready_SO_reg$control_mvp.sv:658$16018 ($aldff): ALOAD=\Rst_RBI, AD=1'1, D=$verific$n888$14858, Q=\Ready_SO
+Replacing control_mvp_default.$verific$Sqrt_enable_SO_reg$control_mvp.sv:566$15992 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n788$14844, Q=\Sqrt_enable_SO
+Replacing control_mvp_default.$verific$Sqrt_start_dly_S_reg$control_mvp.sv:552$15986 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n774$14840, Q=\Sqrt_start_dly_S
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$ext_op_start_q_reg$fpnew_divsqrt_multi.sv:148$11227 ($aldff): ALOAD=\rst_ni, AD=1'0, D=1'x, Q=\ext_op_start_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$out_valid_q_reg$fpnew_divsqrt_multi.sv:290$11306 ($aldff): ALOAD=\rst_ni, AD=1'0, D=\out_valid_d, Q=\out_valid_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$result_aux_q_reg$fpnew_divsqrt_multi.sv:207$11263 ($aldff): ALOAD=\rst_ni, AD=5'00000, D=$verific$n492$11189, Q=\result_aux_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$result_is_fp8_q_reg$fpnew_divsqrt_multi.sv:204$11253 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$verific$n466$11151, Q=\result_is_fp8_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$result_mask_q_reg$fpnew_divsqrt_multi.sv:206$11259 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$verific$n480$11155, Q=\result_mask_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$result_tag_q_reg$fpnew_divsqrt_multi.sv:205$11256 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$verific$n473$11153, Q=\result_tag_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$result_vec_op_q_reg$fpnew_divsqrt_multi.sv:208$11266 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$verific$n514$11157, Q=\result_vec_op_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$state_q_reg$fpnew_divsqrt_multi.sv:289$11304 ($aldff): ALOAD=\rst_ni, AD=2'00, D=\state_d, Q=\state_q
+Replacing fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).$verific$unit_done_q_reg$fpnew_divsqrt_multi.sv:217$11273 ($aldff): ALOAD=\rst_ni, AD=1'0, D=$verific$n525$11162, Q=\unit_done_q
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1837:import$12456 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3264:Not$12451, Q=$auto$verificsva.cc:1835:import$12454
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1837:import$12516 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3264:Not$12511, Q=$auto$verificsva.cc:1835:import$12514
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1837:import$12552 ($adff): ARST=\rst_ni, D=1'1, Q=$auto$verificsva.cc:1835:import$12550
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1838:import$12457 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12453, Q=$auto$verificsva.cc:1836:import$12455
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1838:import$12517 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12513, Q=$auto$verificsva.cc:1836:import$12515
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:1838:import$12553 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12549, Q=$auto$verificsva.cc:1836:import$12551
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:365:getAccept$12444 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3311:And$12439, Q=$auto$verificsva.cc:296:getAccept$12433
+Replacing handshake_checker(ASSUME_ENV=1'b0).$auto$verificsva.cc:365:getAccept$12504 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3311:And$12499, Q=$auto$verificsva.cc:296:getAccept$12493
+Replacing handshake_checker_default.$auto$verificsva.cc:1837:import$12670 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3264:Not$12665, Q=$auto$verificsva.cc:1835:import$12668
+Replacing handshake_checker_default.$auto$verificsva.cc:1837:import$12730 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3264:Not$12725, Q=$auto$verificsva.cc:1835:import$12728
+Replacing handshake_checker_default.$auto$verificsva.cc:1837:import$12822 ($adff): ARST=\rst_ni, D=1'1, Q=$auto$verificsva.cc:1835:import$12820
+Replacing handshake_checker_default.$auto$verificsva.cc:1838:import$12671 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12667, Q=$auto$verificsva.cc:1836:import$12669
+Replacing handshake_checker_default.$auto$verificsva.cc:1838:import$12731 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12727, Q=$auto$verificsva.cc:1836:import$12729
+Replacing handshake_checker_default.$auto$verificsva.cc:1838:import$12823 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3312:Or$12819, Q=$auto$verificsva.cc:1836:import$12821
+Replacing handshake_checker_default.$auto$verificsva.cc:365:getAccept$12658 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3311:And$12653, Q=$auto$verificsva.cc:296:getAccept$12647
+Replacing handshake_checker_default.$auto$verificsva.cc:365:getAccept$12718 ($adff): ARST=\rst_ni, D=$auto$rtlil.cc:3311:And$12713, Q=$auto$verificsva.cc:296:getAccept$12707
+Replacing preprocess_mvp.$verific$Exp_a_norm_DP_reg$preprocess_mvp.sv:363$17408 ($aldff): ALOAD=\Rst_RBI, AD=12'000000000000, D=\Exp_a_norm_DN, Q=\Exp_a_norm_DP
+Replacing preprocess_mvp.$verific$Exp_b_norm_DP_reg$preprocess_mvp.sv:404$17480 ($aldff): ALOAD=\Rst_RBI, AD=12'000000000000, D=\Exp_b_norm_DN, Q=\Exp_b_norm_DP
+Replacing preprocess_mvp.$verific$Inf_a_SP_reg$preprocess_mvp.sv:240$17298 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\Inf_a_SN, Q=\Inf_a_SP
+Replacing preprocess_mvp.$verific$Inf_b_SP_reg$preprocess_mvp.sv:240$17299 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\Inf_b_SN, Q=\Inf_b_SP
+Replacing preprocess_mvp.$verific$Mant_a_norm_DP_reg$preprocess_mvp.sv:348$17400 ($aldff): ALOAD=\Rst_RBI, AD=53'00000000000000000000000000000000000000000000000000000, D=\Mant_a_norm_DN, Q=\Mant_a_norm_DP
+Replacing preprocess_mvp.$verific$Mant_b_norm_DP_reg$preprocess_mvp.sv:389$17473 ($aldff): ALOAD=\Rst_RBI, AD=53'00000000000000000000000000000000000000000000000000000, D=\Mant_b_norm_DN, Q=\Mant_b_norm_DP
+Replacing preprocess_mvp.$verific$NaN_a_SP_reg$preprocess_mvp.sv:240$17300 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\NaN_a_SN, Q=\NaN_a_SP
+Replacing preprocess_mvp.$verific$NaN_b_SP_reg$preprocess_mvp.sv:240$17301 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\NaN_b_SN, Q=\NaN_b_SP
+Replacing preprocess_mvp.$verific$RM_DP_reg$preprocess_mvp.sv:319$17333 ($aldff): ALOAD=\Rst_RBI, AD=3'000, D=\RM_DN, Q=\RM_DP
+Replacing preprocess_mvp.$verific$SNaN_SP_reg$preprocess_mvp.sv:240$17302 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\SNaN_SN, Q=\SNaN_SP
+Replacing preprocess_mvp.$verific$Sign_z_DP_reg$preprocess_mvp.sv:296$17329 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\Sign_z_DN, Q=\Sign_z_DP
+Replacing preprocess_mvp.$verific$Special_case_dly_SBO_reg$preprocess_mvp.sv:267$17319 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=$verific$n644$17145, Q=\Special_case_dly_SBO
+Replacing preprocess_mvp.$verific$Zero_a_SP_reg$preprocess_mvp.sv:240$17296 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\Zero_a_SN, Q=\Zero_a_SP
+Replacing preprocess_mvp.$verific$Zero_b_SP_reg$preprocess_mvp.sv:240$17297 ($aldff): ALOAD=\Rst_RBI, AD=1'0, D=\Zero_b_SN, Q=\Zero_b_SP
+Replacing rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1).$verific$gen_arbiter.rr_q_reg$rr_arb_tree.sv:247$17932 ($aldff): ALOAD=\rst_ni, AD=2'00, D=$verific$n135$17884, Q=\gen_arbiter.rr_q
+Replacing rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).$verific$gen_arbiter.rr_q_reg$rr_arb_tree.sv:247$18109 ($aldff): ALOAD=\rst_ni, AD=3'000, D=$verific$n153$18051, Q=\gen_arbiter.rr_q
+Replacing rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).$verific$gen_arbiter.rr_q_reg$rr_arb_tree.sv:247$18336 ($aldff): ALOAD=\rst_ni, AD=3'000, D=$verific$n153$18278, Q=\gen_arbiter.rr_q
+Replacing rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).$verific$gen_arbiter.rr_q_reg$rr_arb_tree.sv:247$18521 ($aldff): ALOAD=\rst_ni, AD=3'000, D=$verific$n153$18463, Q=\gen_arbiter.rr_q
+Replacing rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).$verific$gen_arbiter.rr_q_reg$rr_arb_tree.sv:247$18706 ($aldff): ALOAD=\rst_ni, AD=3'000, D=$verific$n153$18648, Q=\gen_arbiter.rr_q
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \control_mvp_default..
+Finding unused cells or wires in module \div_sqrt_top_mvp..
+Finding unused cells or wires in module \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b01000000)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b011111)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b0111111)..
+Finding unused cells or wires in module \fpnew_top..
+Finding unused cells or wires in module \handshake_checker(ASSUME_ENV=1'b0)..
+Finding unused cells or wires in module \handshake_checker_default..
+Finding unused cells or wires in module \iteration_div_sqrt_mvp(WIDTH=58)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0100)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01000000,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0101)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110011,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110101,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01101101,MODE=1'b1)..
+Finding unused cells or wires in module \norm_div_sqrt_mvp..
+Finding unused cells or wires in module \nrbd_nrsc_mvp..
+Finding unused cells or wires in module \preprocess_mvp..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \control_mvp_default..
+Finding unused cells or wires in module \div_sqrt_top_mvp..
+Finding unused cells or wires in module \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b01000000)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b011111)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b0111111)..
+Finding unused cells or wires in module \fpnew_top..
+Finding unused cells or wires in module \handshake_checker(ASSUME_ENV=1'b0)..
+Finding unused cells or wires in module \handshake_checker_default..
+Finding unused cells or wires in module \iteration_div_sqrt_mvp(WIDTH=58)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0100)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01000000,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0101)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110011,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110101,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01101101,MODE=1'b1)..
+Finding unused cells or wires in module \norm_div_sqrt_mvp..
+Finding unused cells or wires in module \nrbd_nrsc_mvp..
+Finding unused cells or wires in module \preprocess_mvp..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Removed 76 unused cells and 76 unused wires.
+<suppressed ~90 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module control_mvp_default...
+Warning: Wire control_mvp_default.\Iteration_cell_carry_D [3] is used but has no driver.
+Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [12] is used but has no driver.
+Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [15] is used but has no driver.
+Warning: Wire control_mvp_default.\Iteration_cell_sum_AMASK_D[3] [28] is used but has no driver.
+Checking module div_sqrt_top_mvp...
+Checking module fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])...
+Checking module fpnew_classifier(FpFormat=FP32_fpnew_pkg)...
+Checking module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)...
+Checking module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)...
+Checking module fpnew_classifier(FpFormat=FP64_fpnew_pkg)...
+Checking module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)...
+Checking module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)...
+Checking module fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])...
+Checking module fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)...
+Checking module fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)...
+Checking module fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)...
+Checking module fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)...
+Checking module fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)...
+Checking module fpnew_rounding(AbsWidth=32'b01000000)...
+Checking module fpnew_rounding(AbsWidth=32'b011111)...
+Checking module fpnew_rounding(AbsWidth=32'b0111111)...
+Checking module fpnew_top...
+Checking module handshake_checker(ASSUME_ENV=1'b0)...
+Checking module handshake_checker_default...
+Checking module iteration_div_sqrt_mvp(WIDTH=58)...
+Checking module lzc(WIDTH=32'b0100)...
+Checking module lzc(WIDTH=32'b01000000,MODE=1'b1)...
+Checking module lzc(WIDTH=32'b0101)...
+Checking module lzc(WIDTH=32'b0110011,MODE=1'b1)...
+Checking module lzc(WIDTH=32'b0110101,MODE=1'b1)...
+Checking module lzc(WIDTH=32'b01101101,MODE=1'b1)...
+Checking module norm_div_sqrt_mvp...
+Checking module nrbd_nrsc_mvp...
+Checking module preprocess_mvp...
+Checking module rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)...
+Checking module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)...
+Checking module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)...
+Checking module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)...
+Checking module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)...
+Found and reported 4 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module control_mvp_default.
+Optimizing module div_sqrt_top_mvp.
+Optimizing module fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Optimizing module fpnew_classifier(FpFormat=FP32_fpnew_pkg).
+Optimizing module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010).
+Optimizing module fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011).
+Optimizing module fpnew_classifier(FpFormat=FP64_fpnew_pkg).
+Optimizing module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010).
+Optimizing module fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011).
+Optimizing module fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0]).
+Optimizing module fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Optimizing module fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Optimizing module fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Optimizing module fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic).
+Optimizing module fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic).
+Optimizing module fpnew_rounding(AbsWidth=32'b01000000).
+Optimizing module fpnew_rounding(AbsWidth=32'b011111).
+Optimizing module fpnew_rounding(AbsWidth=32'b0111111).
+Optimizing module fpnew_top.
+Optimizing module handshake_checker(ASSUME_ENV=1'b0).
+Optimizing module handshake_checker_default.
+Optimizing module iteration_div_sqrt_mvp(WIDTH=58).
+Optimizing module lzc(WIDTH=32'b0100).
+Optimizing module lzc(WIDTH=32'b01000000,MODE=1'b1).
+Optimizing module lzc(WIDTH=32'b0101).
+Optimizing module lzc(WIDTH=32'b0110011,MODE=1'b1).
+Optimizing module lzc(WIDTH=32'b0110101,MODE=1'b1).
+Optimizing module lzc(WIDTH=32'b01101101,MODE=1'b1).
+Optimizing module norm_div_sqrt_mvp.
+Optimizing module nrbd_nrsc_mvp.
+Optimizing module preprocess_mvp.
+Optimizing module rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1).
+Optimizing module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Optimizing module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Optimizing module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+Optimizing module rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1).
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\control_mvp_default'.
+Computing hashes of 419 cells of `\control_mvp_default'.
+Finding duplicate cells in `\control_mvp_default'.
+Finding identical cells in module `\div_sqrt_top_mvp'.
+Computing hashes of 3 cells of `\div_sqrt_top_mvp'.
+Finding duplicate cells in `\div_sqrt_top_mvp'.
+Finding identical cells in module `\fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Computing hashes of 274 cells of `\fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Finding duplicate cells in `\fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP32_fpnew_pkg)'.
+Computing hashes of 22 cells of `\fpnew_classifier(FpFormat=FP32_fpnew_pkg)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP32_fpnew_pkg)'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)'.
+Computing hashes of 44 cells of `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)'.
+Computing hashes of 66 cells of `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP64_fpnew_pkg)'.
+Computing hashes of 22 cells of `\fpnew_classifier(FpFormat=FP64_fpnew_pkg)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP64_fpnew_pkg)'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)'.
+Computing hashes of 44 cells of `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)'.
+Finding identical cells in module `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)'.
+Computing hashes of 66 cells of `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)'.
+Finding duplicate cells in `\fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)'.
+Finding identical cells in module `\fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Computing hashes of 96 cells of `\fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Finding duplicate cells in `\fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])'.
+Finding identical cells in module `\fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Computing hashes of 192 cells of `\fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding duplicate cells in `\fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding identical cells in module `\fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Computing hashes of 224 cells of `\fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding duplicate cells in `\fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding identical cells in module `\fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Computing hashes of 115 cells of `\fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding duplicate cells in `\fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding identical cells in module `\fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Computing hashes of 140 cells of `\fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding duplicate cells in `\fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 79 cells of `\fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 13 cells of `\fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 13 cells of `\fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 79 cells of `\fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 52 cells of `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 63 cells of `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 65 cells of `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 52 cells of `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 58 cells of `\fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Computing hashes of 51 cells of `\fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding duplicate cells in `\fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)'.
+Finding identical cells in module `\fpnew_rounding(AbsWidth=32'b01000000)'.
+Computing hashes of 15 cells of `\fpnew_rounding(AbsWidth=32'b01000000)'.
+Finding duplicate cells in `\fpnew_rounding(AbsWidth=32'b01000000)'.
+Finding identical cells in module `\fpnew_rounding(AbsWidth=32'b011111)'.
+Computing hashes of 15 cells of `\fpnew_rounding(AbsWidth=32'b011111)'.
+Finding duplicate cells in `\fpnew_rounding(AbsWidth=32'b011111)'.
+Finding identical cells in module `\fpnew_rounding(AbsWidth=32'b0111111)'.
+Computing hashes of 15 cells of `\fpnew_rounding(AbsWidth=32'b0111111)'.
+Finding duplicate cells in `\fpnew_rounding(AbsWidth=32'b0111111)'.
+Finding identical cells in module `\fpnew_top'.
+Computing hashes of 132 cells of `\fpnew_top'.
+Finding duplicate cells in `\fpnew_top'.
+Finding identical cells in module `\handshake_checker(ASSUME_ENV=1'b0)'.
+Computing hashes of 8 cells of `\handshake_checker(ASSUME_ENV=1'b0)'.
+Finding duplicate cells in `\handshake_checker(ASSUME_ENV=1'b0)'.
+Finding identical cells in module `\handshake_checker_default'.
+Computing hashes of 42 cells of `\handshake_checker_default'.
+Finding duplicate cells in `\handshake_checker_default'.
+Finding identical cells in module `\iteration_div_sqrt_mvp(WIDTH=58)'.
+Computing hashes of 7 cells of `\iteration_div_sqrt_mvp(WIDTH=58)'.
+Finding duplicate cells in `\iteration_div_sqrt_mvp(WIDTH=58)'.
+Finding identical cells in module `\lzc(WIDTH=32'b0100)'.
+Computing hashes of 10 cells of `\lzc(WIDTH=32'b0100)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b0100)'.
+Finding identical cells in module `\lzc(WIDTH=32'b01000000,MODE=1'b1)'.
+Computing hashes of 135 cells of `\lzc(WIDTH=32'b01000000,MODE=1'b1)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b01000000,MODE=1'b1)'.
+Finding identical cells in module `\lzc(WIDTH=32'b0101)'.
+Computing hashes of 15 cells of `\lzc(WIDTH=32'b0101)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b0101)'.
+Finding identical cells in module `\lzc(WIDTH=32'b0110011,MODE=1'b1)'.
+Computing hashes of 109 cells of `\lzc(WIDTH=32'b0110011,MODE=1'b1)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b0110011,MODE=1'b1)'.
+Finding identical cells in module `\lzc(WIDTH=32'b0110101,MODE=1'b1)'.
+Computing hashes of 112 cells of `\lzc(WIDTH=32'b0110101,MODE=1'b1)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b0110101,MODE=1'b1)'.
+Finding identical cells in module `\lzc(WIDTH=32'b01101101,MODE=1'b1)'.
+Computing hashes of 226 cells of `\lzc(WIDTH=32'b01101101,MODE=1'b1)'.
+Finding duplicate cells in `\lzc(WIDTH=32'b01101101,MODE=1'b1)'.
+Finding identical cells in module `\norm_div_sqrt_mvp'.
+Computing hashes of 179 cells of `\norm_div_sqrt_mvp'.
+Finding duplicate cells in `\norm_div_sqrt_mvp'.
+Finding identical cells in module `\nrbd_nrsc_mvp'.
+Computing hashes of 1 cells of `\nrbd_nrsc_mvp'.
+Finding duplicate cells in `\nrbd_nrsc_mvp'.
+Finding identical cells in module `\preprocess_mvp'.
+Computing hashes of 131 cells of `\preprocess_mvp'.
+Finding duplicate cells in `\preprocess_mvp'.
+Finding identical cells in module `\rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)'.
+Computing hashes of 43 cells of `\rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)'.
+Finding duplicate cells in `\rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)'.
+Finding identical cells in module `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Computing hashes of 62 cells of `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding duplicate cells in `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding identical cells in module `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Computing hashes of 62 cells of `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding duplicate cells in `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding identical cells in module `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Computing hashes of 62 cells of `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding duplicate cells in `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding identical cells in module `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Computing hashes of 62 cells of `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Finding duplicate cells in `\rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \control_mvp_default..
+Finding unused cells or wires in module \div_sqrt_top_mvp..
+Finding unused cells or wires in module \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b01000000)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b011111)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b0111111)..
+Finding unused cells or wires in module \fpnew_top..
+Finding unused cells or wires in module \handshake_checker(ASSUME_ENV=1'b0)..
+Finding unused cells or wires in module \handshake_checker_default..
+Finding unused cells or wires in module \iteration_div_sqrt_mvp(WIDTH=58)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0100)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01000000,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0101)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110011,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110101,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01101101,MODE=1'b1)..
+Finding unused cells or wires in module \norm_div_sqrt_mvp..
+Finding unused cells or wires in module \nrbd_nrsc_mvp..
+Finding unused cells or wires in module \preprocess_mvp..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Removed 1057 unused cells and 1061 unused wires.
+<suppressed ~1079 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \control_mvp_default..
+Finding unused cells or wires in module \div_sqrt_top_mvp..
+Finding unused cells or wires in module \fpnew_cast_multi(FpFmtConfig=5'b11000,IntFmtConfig=4'b011,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP32_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b010)..
+Finding unused cells or wires in module \fpnew_classifier(FpFormat=FP64_fpnew_pkg,NumOperands=32'b011)..
+Finding unused cells or wires in module \fpnew_divsqrt_multi(FpFmtConfig=5'b11000,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic[4:0])..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_fma(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP32_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_noncomp(FpFormat=FP64_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic,AuxType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=ADDMUL_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP32_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_fmt_slice(OpGroup=NONCOMP_fpnew_pkg,FpFormat=FP64_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=CONV_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_opgroup_multifmt_slice(OpGroup=DIVSQRT_fpnew_pkg,FpFmtConfig=5'b11000,IntFmtConfig=4'b011,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,PipeConfig=BEFORE_fpnew_pkg,TagType=logic)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b01000000)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b011111)..
+Finding unused cells or wires in module \fpnew_rounding(AbsWidth=32'b0111111)..
+Finding unused cells or wires in module \fpnew_top..
+Finding unused cells or wires in module \handshake_checker(ASSUME_ENV=1'b0)..
+Finding unused cells or wires in module \handshake_checker_default..
+Finding unused cells or wires in module \iteration_div_sqrt_mvp(WIDTH=58)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0100)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01000000,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0101)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110011,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b0110101,MODE=1'b1)..
+Finding unused cells or wires in module \lzc(WIDTH=32'b01101101,MODE=1'b1)..
+Finding unused cells or wires in module \norm_div_sqrt_mvp..
+Finding unused cells or wires in module \nrbd_nrsc_mvp..
+Finding unused cells or wires in module \preprocess_mvp..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0100,DataType=output_t_fpnew_top,AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=ADDMUL_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=CONV_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=DIVSQRT_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b1010101010,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Finding unused cells or wires in module \rr_arb_tree(NumIn=32'b0101,DataType=output_t_fpnew_opgroup_block(OpGroup=NONCOMP_fpnew_pkg,Width=32'b01000000,EnableVectors=1'b0,DivSqrtSel=PULP_fpnew_pkg,FpFmtMask=5'b11000,IntFmtMask=4'b011,FmtPipeRegs=160'b0,FmtUnitTypes=10'b0101010101,PipeConfig=BEFORE_fpnew_pkg,TagType=logic),AxiVldRdy=1'b1)..
+Removed 0 unused cells and 64 unused wires.
+<suppressed ~15 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+Warnings: 4 unique messages, 4 total
+End of script. Logfile hash: a8bd69a18f, time: 0.86s, user: 0.83s, system: 0.04s, MEM: 48.14 MB peak
+Yosys 0.67 (git sha1 2d1509d1b, Release, Clang /usr/bin/clang++ 18.1.8) [github.com/YosysHQ/yosys at yosys-slang]
+Time spent: 37% 4x opt_clean (0 sec), 20% 1x check (0 sec), ...

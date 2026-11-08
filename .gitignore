@@ -1,8 +1,13 @@
 *~
 html
 Bender.lock
-formal/noncomp
-formal/noncomp_bmc
-formal/noncomp_cvr
-formal/noncomp_prf
-formal/noncomp_waves.gtkw
+#noncompo artifacts
+formal/noncomp/noncomp/
+formal/noncomp/noncomp_bmc
+formal/noncomp/noncomp_cvr
+formal/noncomp/noncomp_prf
+#divsqrt artifacts
+formal/pulp-divsqrt/divsqrt/
+formal/pulp-divsqrt/divsqrt_bmc/
+formal/pulp-divsqrt/divsqrt_prf/
+formal/pulp-divsqrt/divsqrt_cvr/

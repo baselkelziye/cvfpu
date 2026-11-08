@@ -1,0 +1,27 @@
+##   0:00:00  Solver: yices
+##   0:00:01  Checking cover reachability in step 0..
+##   0:00:02  Checking cover reachability in step 1..
+##   0:00:02  Checking cover reachability in step 2..
+##   0:00:02  Checking cover reachability in step 3..
+##   0:00:03  Checking cover reachability in step 4..
+##   0:00:04  Checking cover reachability in step 5..
+##   0:00:04  Reached cover statement in step 5 at fpnew_top.fpnew_top_b: c_out_handshake
+##   0:00:04  Writing trace to VCD file: engine_0/trace0.vcd
+##   0:00:09  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+##   0:00:09  Writing trace to constraints file: engine_0/trace0.smtc
+##   0:00:09  Writing trace to Yosys witness file: engine_0/trace0.yw
+##   0:00:10  Checking cover reachability in step 5..
+##   0:00:10  Reached cover statement in step 5 at fpnew_top.\gen_operation_groups[3].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi .cast_handshake: c_out_handshake
+##   0:00:10  Writing trace to VCD file: engine_0/trace1.vcd
+##   0:00:15  Writing trace to Verilog testbench: engine_0/trace1_tb.v
+##   0:00:15  Writing trace to constraints file: engine_0/trace1.smtc
+##   0:00:15  Writing trace to Yosys witness file: engine_0/trace1.yw
+##   0:00:16  Checking cover reachability in step 5..
+##   0:00:16  Checking cover reachability in step 6..
+##   0:00:17  Checking cover reachability in step 7..
+##   0:00:17  Reached cover statement in step 7 at fpnew_top.\gen_operation_groups[1].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi .divsqrt_handshake: c_out_handshake
+##   0:00:17  Writing trace to VCD file: engine_0/trace2.vcd
+##   0:00:24  Writing trace to Verilog testbench: engine_0/trace2_tb.v
+##   0:00:24  Writing trace to constraints file: engine_0/trace2.smtc
+##   0:00:24  Writing trace to Yosys witness file: engine_0/trace2.yw
+##   0:00:25  Status: passed

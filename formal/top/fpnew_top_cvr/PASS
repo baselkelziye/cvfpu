@@ -1,0 +1,12 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:31 (31)
+Elapsed process time [H:MM:SS (secs)]: 0:00:33 (33)
+engine_0 (smtbmc yices) returned pass
+cover trace: engine_0/trace0.vcd
+cover trace: engine_0/trace0.yw
+  reached cover statement fpnew_top.fpnew_top_b.c_out_handshake at handshake_checker.sv:67.18-69.3 step 5
+cover trace: engine_0/trace1.vcd
+cover trace: engine_0/trace1.yw
+  reached cover statement fpnew_top.\gen_operation_groups[3].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.i_fpnew_cast_multi .cast_handshake.c_out_handshake at handshake_checker.sv:67.18-69.3 step 5
+cover trace: engine_0/trace2.vcd
+cover trace: engine_0/trace2.yw
+  reached cover statement fpnew_top.\gen_operation_groups[1].i_opgroup_block .\gen_merged_slice.i_multifmt_slice .\gen_num_lanes[0].active_lane.lane_instance.gen_pulp_divsqrt.i_fpnew_divsqrt_multi .divsqrt_handshake.c_out_handshake at handshake_checker.sv:67.18-69.3 step 7

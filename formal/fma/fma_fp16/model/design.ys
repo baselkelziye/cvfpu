@@ -1,0 +1,9 @@
+# running in fma_fp16/src/
+verific -sv fpnew_pkg.sv fp16_add_rne.sv cf_math_pkg.sv lzc.sv fp16_classify.sv fpnew_rounding.sv fmalza.sv fpnew_fma_multi.sv fpnew_fma.sv handshake_checker.sv fpnew_classifier.sv tb_fma.sv
+verific -sv -DFORMAL -DFP16 -DRNE -DADD
+
+prep -top tb_fma
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

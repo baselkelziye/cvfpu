@@ -1,0 +1,33 @@
+[tasks]
+prf
+cvr
+bmc
+
+[options]
+prf: mode prove
+cvr: mode cover
+bmc: mode bmc
+depth 31
+
+[engines]
+smtbmc
+
+[script]
+verific -sv -DFORMAL \
+  fpnew_pkg.sv        \
+  fpnew_noncomp.sv    \
+  fpnew_classifier.sv \
+  handshake_checker.sv \
+  handshake_bind.sv
+
+verific -import -extnets fpnew_noncomp
+
+prep -top fpnew_noncomp
+
+[files]
+fpnew_pkg.sv                 ../../src/fpnew_pkg.sv
+fpnew_noncomp.sv             ../../src/fpnew_noncomp.sv
+fpnew_classifier.sv          ../../src/fpnew_classifier.sv
+common_cells/registers.svh   ../../src/common_cells/include/common_cells/registers.svh
+handshake_checker.sv         ../fv_common/handshake_checker.sv
+handshake_bind.sv            handshake_bind.sv
